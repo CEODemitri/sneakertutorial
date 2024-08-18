@@ -24,5 +24,7 @@ STOPPED VIDEO AT: 4:52 / 30:00 min. duration: 45min
 
 1. Menu In Navaigation and Bottom App Bar Component Complete.
 2. Psuedo NavBar Complete
+3. Shoe Card complete and in Use. 
+4. Page transition using a package i found exploring
 
-STOPPED VIDEO AT: 14:41 / 30:00 min. duration: 165min
+STOPPED VIDEO AT: 20:41 / 30:00 min. duration: 165min

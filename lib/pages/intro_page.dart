@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sneakertutorial/pages/home_page.dart';
 
 class IntroPage extends StatelessWidget {
@@ -50,14 +51,15 @@ class IntroPage extends StatelessWidget {
               GestureDetector(
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
+                  PageTransition(
+                    type: PageTransitionType.leftToRightWithFade,
+                    child: HomePage(),
                   ),
                 ),
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.indigo[600],
+                    color: const Color.fromARGB(255, 8, 12, 38),
                   ),
                   padding: EdgeInsets.all(25),
                   child: const Center(

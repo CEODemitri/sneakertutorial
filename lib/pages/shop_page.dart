@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:sneakertutorial/components/shoe_tile.dart';
+import 'package:sneakertutorial/models/shoe.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -42,13 +45,13 @@ class _ShopPageState extends State<ShopPage> {
         ),
 
         //hot picks
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
-                'Calenedar ♚',
+                'Grails ♚',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
               Text(
@@ -58,6 +61,30 @@ class _ShopPageState extends State<ShopPage> {
             ],
           ),
         ),
+
+        const SizedBox(height: 10),
+
+        Expanded(child: ListView.builder(
+            itemCount: 4,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+          Shoe shoe = Shoe(
+              name: 'Shoe',
+              description: 'Shoe',
+              price: '250.00',
+              imagePath: 'lib/images/ragingbull14.png');
+          return ShoeTile(
+            shoe: shoe,
+            // onTap: () {
+            //   // Navigate to detail page
+            // },
+          );
+        })),
+
+        Padding(
+          padding: const EdgeInsets.only(top: 25.0, left: 25.0, right: 25.0),
+          child: Divider(color: Colors.white,),
+        )
       ],
     );
   }
