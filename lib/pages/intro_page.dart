@@ -52,8 +52,9 @@ class IntroPage extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   PageTransition(
-                    type: PageTransitionType.leftToRightWithFade,
+                    type: PageTransitionType.rightToLeftJoined,
                     child: HomePage(),
+                    childCurrent: this,
                   ),
                 ),
                 child: Container(

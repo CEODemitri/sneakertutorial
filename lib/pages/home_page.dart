@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sneakertutorial/components/bottom_nav_bar.dart';
 import 'package:sneakertutorial/pages/cart_page.dart';
+import 'package:sneakertutorial/pages/intro_page.dart';
 import 'package:sneakertutorial/pages/shop_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             ),
           )),
       drawer: Drawer(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey[900],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -56,61 +58,81 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Divider(color: Colors.grey[800]),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25.0),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.home,
-                      color: Colors.white,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.leftToRight,
+                      child: IntroPage(),
                     ),
-                    title: Text(
-                      'Home',
-                      style: TextStyle(color: Colors.white),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 25.0),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Home',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25.0),
-                  child: ListTile(
-                    // ignore: prefer_const_constructors
-                    leading: Icon(
-                      Icons.calendar_month,
-                      color: Colors.white,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      child: HomePage(),
                     ),
-                    title: Text(
-                      'Releases',
-                      style: TextStyle(color: Colors.white),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 25.0),
+                    child: ListTile(
+                      // ignore: prefer_const_constructors
+                      leading: Icon(
+                        Icons.calendar_month,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'Releases',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25.0),
-                  child: ListTile(
-                    // ignore: prefer_const_constructors
-                    leading: Icon(
-                      Icons.newspaper,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'Blog',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25.0),
-                  child: ListTile(
-                    // ignore: prefer_const_constructors
-                    leading: Icon(
-                      Icons.info,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'About',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
+
+                // ADD WHEN HAVE CONTENT TO FILL
+                // const Padding(
+                //   padding: EdgeInsets.only(left: 25.0),
+                //   child: ListTile(
+                //     // ignore: prefer_const_constructors
+                //     leading: Icon(
+                //       Icons.newspaper,
+                //       color: Colors.white,
+                //     ),
+                //     title: Text(
+                //       'Blog',
+                //       style: TextStyle(color: Colors.white),
+                //     ),
+                //   ),
+                // ),
+                // const Padding(
+                //   padding: EdgeInsets.only(left: 25.0),
+                //   child: ListTile(
+                //     // ignore: prefer_const_constructors
+                //     leading: Icon(
+                //       Icons.info,
+                //       color: Colors.white,
+                //     ),
+                //     title: Text(
+                //       'About',
+                //       style: TextStyle(color: Colors.white),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
             const Padding(
